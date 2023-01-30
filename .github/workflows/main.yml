@@ -13,10 +13,10 @@ jobs:
   upload-artifacts:
   steps:
     - uses: actions/checkout@v3
-    - run: |
-      sudo apt update
-      sudo apt-get install -y libcurl4-openssl-dev uuid-dev
-      touch dictu-binary
+      run: |
+        sudo apt update
+        sudo apt-get install -y libcurl4-openssl-dev uuid-dev
+        touch dictu-binary
     - uses: actions/upload-artifact@v3
       with:
         name: dictu-binary
