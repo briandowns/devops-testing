@@ -1,21 +1,22 @@
-name: CI
+# Publish GitHub workflow artifacts tutorial example
+name: Publish GitHub Actions Artifacts Example
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [ master ]
 
 jobs:
-  upload-artifacts:
+       
+  archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: create binary
+      - name: step 1 - Compile binary
         run: |
           sudo apt update
-          sudo apt-get install -y libcurl4-openssl-dev uuid-dev
-          touch dictu-binary
-      - uses: actions/upload-artifact@v3
-      - name: upload binary
-        with:
-          name: dictu-binary
-          path: ./dictu-binary
+          touch dictu
+    
+      - name: Step 2 - Upload binary
+        uses: actions/upload-artifact@v2
+        with: 
+          name: assets-for-download
+          path: dictu
