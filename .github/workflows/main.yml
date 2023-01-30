@@ -16,7 +16,7 @@ jobs:
           touch dictu
     
       - name: Step 2 - Upload binary
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with: 
           name: assets-for-download
           path: dictu
