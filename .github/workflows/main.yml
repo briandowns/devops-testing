@@ -4,13 +4,9 @@ on:
   release:
     types: [published]
 
-  # pull_request:
-  #   branches:
-  #     - develop
-  #     - master
-
 jobs:
   upload-artifacts:
+  runs-on: ubuntu-latest
   steps:
   - uses: actions/checkout@v3
     run: |
