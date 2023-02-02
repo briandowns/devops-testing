@@ -14,9 +14,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build
-      run: echo ${{ github.sha }} > Release.txt
+      run: |
+        echo ${{ github.sha }} > Release.txt
+        touch and_another_file
     - name: Test
-      run: cat Release.txt
+      run: |
+        cat Release.txt
     - name: Release
       uses: SierraSoftworks/gh-releases@v1.0.7
       with:
@@ -24,3 +27,5 @@ jobs:
         overwrite: 'true'
         files: |
           Release.txt
+          and_another_file
+
