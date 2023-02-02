@@ -20,6 +20,7 @@ jobs:
     - name: Release
       uses: SierraSoftworks/gh-releases@v1.0.7
       with:
+        token: ${{ secrets.TOKEN }}
         overwrite: 'true'
         files: |
           Release.txt
