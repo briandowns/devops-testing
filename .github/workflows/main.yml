@@ -16,7 +16,7 @@ jobs:
     - name: Build
       run: |
         echo ${{ github.sha }} > Release.txt
-        touch and_another_file
+        echo "blah blah blah" > and_another_file
     - name: Test
       run: |
         cat Release.txt
