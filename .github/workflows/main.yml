@@ -26,6 +26,6 @@ jobs:
         token: ${{ secrets.TOKEN }}
         overwrite: 'true'
         files: |
-          Release.txt
-          and_*_file
+          Release_{{github.ref}}.txt
+          and_{{github.ref}}_file
 
