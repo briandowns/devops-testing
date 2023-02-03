@@ -27,5 +27,5 @@ jobs:
         overwrite: 'true'
         files: |
           Release.txt
-          and_another_file
+          and_*_file
 
