@@ -16,7 +16,7 @@ jobs:
     - name: Build
       run: |
         echo ${{ github.sha }} > Release_${{ github.ref_name }}.txt
-        echo "blah blah blah" > and_another_file
+        echo "blah blah blah" > and_${{ github.ref_name }}_file
     - name: Test
       run: |
         cat Release_${{ github.ref_name }}.txt
