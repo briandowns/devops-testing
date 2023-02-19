@@ -20,6 +20,11 @@ jobs:
     - name: Test
       run: |
         cat Release.txt
+    - name: Install nfpm
+      run: |
+        echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
+        sudo apt update
+        sudo apt install nfpm
     - name: Release
       uses: SierraSoftworks/gh-releases@v1.0.7
       with:
