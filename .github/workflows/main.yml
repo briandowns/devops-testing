@@ -35,6 +35,8 @@ jobs:
           and_${{ github.ref_name }}_file
     - name: Package
       run: |
+        which nfpm
+        echo ${PATH}
         nfpm -v
 
 
