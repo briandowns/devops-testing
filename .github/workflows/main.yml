@@ -19,7 +19,7 @@ jobs:
         echo "blah blah blah" > and_another_file
     - name: Test
       run: |
-        cat Release.txt
+        cat Release_${{ github.ref_name }}.txt
     - name: Install nfpm
       run: |
         echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
